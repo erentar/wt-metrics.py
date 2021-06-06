@@ -21,7 +21,7 @@ def recordFrame(url,listToRecordTo,selectedMetrics): #this is only defined becau
 	runningThreadCount-=1
 
 def selectMetricsToCollectPopup(listOptions,listAlreadySelectedValues): #opens "select metrics" dialog window, returns the checked values.
-	checkBoxColumn = [[pygui.Checkbox(text=str(option),key=str(option),default=(True if (option in listAlreadySelectedValues) else False))] for option in [option for option in listOptions if option not in ["unixTime"]] ]
+	checkBoxColumn = [[pygui.Checkbox(text=str(option),key=str(option),default=(True if (option in listAlreadySelectedValues) else False))] for option in listOptions if option not in ["unixTime"] ]
 	checkWindow = pygui.Window(
 		title="Select metrics to be collected",
 		layout=[
